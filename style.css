@@ -1,0 +1,39 @@
+#site{
+  background-color: white;
+
+}
+.main-img{
+ border: 3px solid black;
+ margin:20px;
+ border-radius: 25px;
+ width:98%;
+ opacity: 90%;
+}
+
+
+.main-navbar{
+ background: white;
+ align-items: flex-end;
+
+}
+#logo{
+ font-size: 4rem;
+ font-weight: 800;
+ font-family: "Abril Fatface", serif;
+ color: rgb(0% 12.16% 24.71%) ;
+}
+.coin{
+ width: 3.4rem;
+ padding-bottom: 8px;
+ filter: invert(10%) sepia(59%) saturate(1803%) hue-rotate(187deg) brightness(99%) contrast(105%);
+}
+
+#question{
+ font-size: 1.5rem;
+ font-family: "Abril Fatface", serif;
+ color: rgb(0% 12.16% 24.71%) ;
+ 
+}
+#question:hover{
+ color:rgb(22.75% 42.75% 54.9%);
+}
