@@ -1,22 +1,22 @@
+body{
+  background-color: whitesmoke;
+}
+
 #site {
-  background-color:azure;
-  background-image: url("./img/firstbackground.jpg");
+  background-image: url("./img/background.jpg");
   background-size: cover;
   background-position: top;
   height: 84vh;
   background-repeat: no-repeat;
-  border: 3px solid black;
+  border: 3px solid rgb(0% 12.16% 24.71%);;
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 25px;
-  opacity: 90%;
+  opacity: 80%;
 }
 
-
 .main-navbar {
-  background: azure;
   align-items: flex-end;
-
 }
 
 #logo {
@@ -41,4 +41,45 @@
 
 #question:hover {
   color: rgb(22.75% 42.75% 54.9%);
+}
+
+.text-panel{
+  background-color: whitesmoke ;
+  border-radius: 25px;
+  border: 3px solid rgb(0% 12.16% 24.71%) ;
+  width:100%;
+  
+  margin-top: 20px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 500;
+  padding: 20px;
+  font-size: 1.3rem;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 670px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 670px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
+
+.button-descript{
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color:black ;
+  text-shadow: #EAD8B1 2px 0 10px;
+}
+#quote{
+  font-size: 1.4rem;
+  font-weight:900 ;
+  
 }
