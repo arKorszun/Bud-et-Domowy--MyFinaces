@@ -3,7 +3,7 @@ body{
 }
 
 #site {
-  background-image: url("./img/background.jpg");
+  background-image: url("./img/background\ \(2\).jpg");
   background-size: cover;
   background-position: top;
   height: 84vh;
@@ -12,7 +12,7 @@ body{
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 25px;
-  opacity: 80%;
+  opacity: 90%;
 }
 
 .main-navbar {
@@ -76,7 +76,7 @@ body{
   font-weight: 800;
   font-size: 1.3rem;
   color:black ;
-  text-shadow: #EAD8B1 2px 0 10px;
+  
 }
 #quote{
   font-size: 1.4rem;
