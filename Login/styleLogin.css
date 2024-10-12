@@ -1,0 +1,80 @@
+body {
+  background-color: whitesmoke;
+}
+
+#site {
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: top;
+  height: 84vh;
+  background-repeat: no-repeat;
+  border: 3px solid rgb(0% 12.16% 24.71%);
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 25px;
+  opacity: 90%;
+  padding-top: 20px;
+}
+
+.main-navbar {
+  align-items: flex-end;
+}
+
+#logo {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "Abril Fatface", serif;
+  color: rgb(0% 12.16% 24.71%);
+}
+
+.coin {
+  width: 3.4rem;
+  padding-bottom: 8px;
+  filter: invert(10%) sepia(59%) saturate(1803%) hue-rotate(187deg) brightness(99%) contrast(105%);
+}
+
+
+.text-panel {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  border: 3px solid rgb(0% 12.16% 24.71%);
+  width: 100%;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 500;
+  padding-bottom: 20px;  
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 670px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 670px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
+
+.registration{
+  background-color: rgba(13, 109, 253, 0.329) ;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  height: 50px;
+  border-bottom:1px double rgb(0% 12.16% 24.71%);   
+}
+
+.input-place {
+  font-size: 1.1rem;
+}
+
+
+
+
