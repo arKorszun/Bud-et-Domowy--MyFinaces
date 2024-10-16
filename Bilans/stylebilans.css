@@ -6,7 +6,7 @@ body {
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: top;
-  height: 84vh;
+  height: auto;
   background-repeat: no-repeat;
   border: 3px solid rgb(0% 12.16% 24.71%);
   ;
@@ -50,29 +50,10 @@ body {
   border: 3px solid rgb(0% 12.16% 24.71%);
   width: 100%;
   color: rgb(0% 12.16% 24.71%);
-  
   font-family: "Source Sans 3", sans-serif;
   font-weight: 500;
   padding: 20px;
   font-size: 1.3rem;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 670px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 670px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 700px;
-  }
 }
 
 .log{
@@ -107,4 +88,12 @@ body {
 
 .period-list{
 background-color: rgb(0% 12.16% 24.71%);
+}
+
+.input-group-text{
+  width:160px;
+}
+
+.balance-difference{
+  color: rgb(100, 197, 105) ;
 }

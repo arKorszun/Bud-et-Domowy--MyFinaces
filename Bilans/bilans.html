@@ -52,7 +52,7 @@
                 <li><a class="dropdown-item" href="#">Bieżący miesiąc</a></li>
                 <li><a class="dropdown-item" href="#">Poprzedni miesiąc</a></li>
                 <li><a class="dropdown-item" href="#">Bieżący rok</a></li>
-                <li><a class="dropdown-item" href="#" data-toggle="modal" data-target=".bd-modal-sm">Niestandardowy</a>
+                <li><a class="dropdown-item" id="modal-item" href="#" data-bs-toggle="modal" data-bs-target=".bd-modal-md">Niestandardowy</a>
                 </li>
               </ul>
             </div>
@@ -61,10 +61,21 @@
       </div>
     </nav>
     <section class="date-modal">
-      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <p>Tu bedzie wybór dat</p>
+      <div class="modal fade bd-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content px-4 py-2">
+            <h3 class="modal-header">Wybierz zakres dat</h3>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Data początkowa</span>
+              <input type="date" id="date" class="form-control input-place" placeholder=""
+                aria-label="Date" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">Data końcowa</span>
+              <input type="date" id="date" class="form-control input-place" placeholder=""
+                aria-label="Date" aria-describedby="basic-addon2">
+            </div>
+
           </div>
         </div>
       </div>
@@ -177,8 +188,8 @@
             <div class="col-md-4 pt-5">
               <div class="row text-panel">
                 <div class="col ">
-                  <h2>Bilans</h2>
-                  <p>Bilans za wskazany okres wynosi: <span class="balance-difference">4700 PLN</span> </p>
+                  
+                  <h3>Bilans za wskazany okres wynosi: <span class="balance-difference">4700 PLN</span> </h3>
                   <p class="balance-feedback">Gratulacje. Świetnie zarządzasz finansami!</p>
                 </div>
               </div>
