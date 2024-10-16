@@ -1,0 +1,110 @@
+body {
+  background-color: whitesmoke;
+}
+
+#site {
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: top;
+  height: 84vh;
+  background-repeat: no-repeat;
+  border: 3px solid rgb(0% 12.16% 24.71%);
+  ;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 25px;
+  opacity: 90%;
+}
+
+.main-navbar {
+  align-items: flex-end;
+}
+
+#logo {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "Abril Fatface", serif;
+  color: rgb(0% 12.16% 24.71%);
+}
+
+.coin {
+  width: 3.4rem;
+  padding-bottom: 8px;
+  filter: invert(10%) sepia(59%) saturate(1803%) hue-rotate(187deg) brightness(99%) contrast(105%);
+}
+
+#question {
+  font-size: 1.5rem;
+  font-family: "Abril Fatface", serif;
+  color: rgb(0% 12.16% 24.71%);
+
+}
+
+#question:hover {
+  color: rgb(22.75% 42.75% 54.9%);
+}
+
+.text-panel {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  border: 3px solid rgb(0% 12.16% 24.71%);
+  width: 100%;
+  color: rgb(0% 12.16% 24.71%);
+  
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 500;
+  padding: 20px;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 670px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 670px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
+
+.log{
+  padding-top: 15px;
+  color: rgb(0, 128, 0);
+}
+.index{
+  margin-top: 7px;
+}
+
+.navigation a{
+  border-color: rgb(0% 12.16% 24.71%) ;
+  color: rgb(0% 12.16% 24.71%);
+}
+.navigation img{
+  padding-right: 5px;
+  padding-bottom: 4px;
+}
+
+
+.btn:hover{
+  background-color: rgb(69, 152, 235);
+}
+
+.logout:hover{
+  background-color: rgb(235, 89, 89);
+}
+
+.home:hover{
+  background-color: rgb(100, 197, 105);
+}
+
+.period-list{
+background-color: rgb(0% 12.16% 24.71%);
+}
