@@ -52,7 +52,8 @@
                 <li><a class="dropdown-item" href="#">Bieżący miesiąc</a></li>
                 <li><a class="dropdown-item" href="#">Poprzedni miesiąc</a></li>
                 <li><a class="dropdown-item" href="#">Bieżący rok</a></li>
-                <li><a class="dropdown-item" id="modal-item" href="#" data-bs-toggle="modal" data-bs-target=".bd-modal-md">Niestandardowy</a>
+                <li><a class="dropdown-item" id="modal-item" href="#" data-bs-toggle="modal"
+                    data-bs-target=".bd-modal-md">Niestandardowy</a>
                 </li>
               </ul>
             </div>
@@ -61,21 +62,24 @@
       </div>
     </nav>
     <section class="date-modal">
-      <div class="modal fade bd-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal fade bd-modal-md" tabindex="-1" role="dialog" aria-labelledby="date-modal"
+        aria-hidden="true">
         <div class="modal-dialog modal-md">
           <div class="modal-content px-4 py-2">
             <h3 class="modal-header">Wybierz zakres dat</h3>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Data początkowa</span>
-              <input type="date" id="date" class="form-control input-place" placeholder=""
-                aria-label="Date" aria-describedby="basic-addon1">
+              <input type="date" id="date" class="form-control input-place"  aria-label="Date"
+                aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon2">Data końcowa</span>
-              <input type="date" id="date" class="form-control input-place" placeholder=""
-                aria-label="Date" aria-describedby="basic-addon2">
+              <input type="date" id="date2" class="form-control input-place"  aria-label="Date"
+                aria-describedby="basic-addon2">
             </div>
-
+            <div class="text-center">
+              <a href="#"><button class="btn btn-success"> Akceptuj</button></a>
+            </div>
           </div>
         </div>
       </div>
@@ -186,19 +190,42 @@
             </div>
 
             <div class="col-md-4 pt-5">
-              <div class="row text-panel">
+              <div class="row text-panel balance-sum ">
                 <div class="col ">
-                  
+
                   <h3>Bilans za wskazany okres wynosi: <span class="balance-difference">4700 PLN</span> </h3>
                   <p class="balance-feedback">Gratulacje. Świetnie zarządzasz finansami!</p>
                 </div>
               </div>
+              <div class="row pie-char text-panel">
+                <div>
+                  <canvas id="myChart"></canvas>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                <script>
+                  const ctx = document.getElementById('myChart');
+
+                  new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                      labels: ['Ubrania', 'Jedzenie', 'Emerytura', 'Inne',],
+                      datasets: [{
+                        label: 'Expenses by category',
+                        data: [200, 500, 300, 1000],
+                        borderWidth: 1
+                      }]
+                    },
+                    options: {}
+                  });
+                </script>
+
+              </div>
             </div>
 
           </div>
-          <div class="row">
 
-          </div>
         </div>
       </div>
     </article>

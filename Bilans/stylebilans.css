@@ -6,7 +6,7 @@ body {
   background-image: url("../img/background.jpg");
   background-size: cover;
   background-position: top;
-  height: auto;
+  height: 84vh;
   background-repeat: no-repeat;
   border: 3px solid rgb(0% 12.16% 24.71%);
   ;
@@ -96,4 +96,13 @@ background-color: rgb(0% 12.16% 24.71%);
 
 .balance-difference{
   color: rgb(100, 197, 105) ;
+}
+
+.pie-char{
+  width:500px;
+}
+
+.balance-sum{
+  margin-bottom: 25px;
+  width:500px;
 }
