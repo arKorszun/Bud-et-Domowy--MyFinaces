@@ -41,7 +41,7 @@ body {
   width: 100%;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 500;
-  padding-bottom: 20px;  
+  padding-bottom: 20px;
   font-size: 1.2rem;
 }
 
@@ -63,18 +63,97 @@ body {
   }
 }
 
-.registration{
-  background-color: rgba(25, 135, 84, 0.329) ;
+.registration {
+  background-color: rgba(25, 135, 84, 0.329);
   border-top-left-radius: 22px;
   border-top-right-radius: 22px;
   height: 50px;
-  border-bottom:1px double rgb(0% 12.16% 24.71%);   
+  border-bottom: 1px double rgb(0% 12.16% 24.71%);
 }
 
 .input-place {
   font-size: 1.1rem;
 }
 
+@media (max-width: 860px) {
+
+  #logo {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: "Abril Fatface", serif;
+    color: rgb(0% 12.16% 24.71%);
+  }
+
+  .coin {
+    width: 2.5rem;
+    padding-bottom: 8px;
+    filter: invert(10%) sepia(59%) saturate(1803%) hue-rotate(187deg) brightness(99%) contrast(105%);
+  }
 
 
+  .btn {
+    padding: 5px;
+  }
 
+}
+
+@media (max-width: 500px) {
+
+
+  .site {
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 100%;
+
+  }
+
+  #logo {
+
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: "Abril Fatface", serif;
+    color: rgb(0% 12.16% 24.71%);
+  }
+
+  .coin {
+    width: 2rem;
+    padding-bottom: 8px;
+    filter: invert(10%) sepia(59%) saturate(1803%) hue-rotate(187deg) brightness(99%) contrast(105%);
+  }
+
+  .btn {
+    padding: 5px;
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+
+  .site {
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 100%;
+
+  }
+
+  #logo {
+
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-family: "Abril Fatface", serif;
+    color: rgb(0% 12.16% 24.71%);
+  }
+
+  .coin {
+    width: 1.6rem;
+    padding-bottom: 6px;
+    filter: invert(10%) sepia(59%) saturate(1803%) hue-rotate(187deg) brightness(99%) contrast(105%);
+  }
+
+  .btn {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+}
