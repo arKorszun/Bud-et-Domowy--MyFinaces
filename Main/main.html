@@ -23,26 +23,48 @@
 <body>
   <main>
 
-    <nav class="navbar navbar-expand " aria-label="Second navbar example">
-      <div class="container-fluid main-navbar align-items-end ">
-        <div class="navbar-brand col-5 px-5 align-bottom">
+    <nav class="navbar navbar-expand-md " aria-label="navbar">
+      <div class="container-fluid main-navbar align-items-start ">
+        <div class="navbar-brand col-4 px-5 d-flex">
           <a class="navbar-brand" id="logo" href="#"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
             MyFinances</a>
+          <button class="navbar-toggler" id="menubtn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <div class="collapse navbar-collapse col-4 pb-4 ">
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end navigation">
-            <a role="button" class="btn btn-outline-secondary home px-3 "><img src="../img/house-fill.svg"
-                alt="house icon">Strona Główna</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/coin.svg" alt="coin icon">Dodaj
-              Przychód</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/cart-plus.svg"
-                alt="cart icon">Dodaj Wydatek</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/clipboard-data.svg"
-                alt="clipbord icon">Przeglądaj Bilans</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/tools.svg"
-                alt="tools icon">Ustawienia</a>
-            <a role="button" class="btn btn-outline-secondary logout px-3"><img src="../img/box-arrow-right.svg"
-                alt="logout icon">Wyloguj</a>
+
+        <div class="col-8 ">
+
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="d-grid gap-2 d-flex navigation ">
+              <li class="nav-item">
+                <a role="button" href="../Main/main.html" class="btn btn-outline-secondary home px-3 "><img
+                    src="../img/house-fill.svg" alt="house icon">Strona Główna</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../AddIncome/addIncome.html" class="btn btn-outline-secondary px-3"><img
+                    src="../img/coin.svg" alt="coin icon">Dodaj
+                  Przychód</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../AddExpense/addExpense.html" class="btn btn-outline-secondary px-3"><img
+                    src="../img/cart-plus.svg" alt="cart icon">Dodaj Wydatek</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../Bilans/bilans.html" class="btn btn-outline-secondary px-3"><img
+                    src="../img/clipboard-data.svg" alt="clipbord icon">Przeglądaj Bilans</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/tools.svg"
+                    alt="tools icon">Ustawienia</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../Home/home.html" class="btn btn-outline-secondary logout px-3"><img
+                    src="../img/box-arrow-right.svg" alt="logout icon">Wyloguj</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -23,26 +23,48 @@
 <body>
   <main>
 
-    <nav class="navbar navbar-expand " aria-label="Second navbar example">
-      <div class="container-fluid main-navbar align-items-end ">
-        <div class="navbar-brand col-5 px-5 align-bottom">
+    <nav class="navbar navbar-expand-md " aria-label="navbar">
+      <div class="container-fluid main-navbar align-items-start ">
+        <div class="navbar-brand col-4 px-5 d-flex">
           <a class="navbar-brand" id="logo" href="#"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
             MyFinances</a>
+          <button class="navbar-toggler" id="menubtn" type="button" data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <div class="collapse navbar-collapse col-4 pb-4 ">
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end navigation">
-            <a role="button" class="btn btn-outline-secondary home px-3 "><img src="../img/house-fill.svg"
-                alt="house icon">Strona Główna</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/coin.svg" alt="coin icon">Dodaj
-              Przychód</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/cart-plus.svg"
-                alt="cart icon">Dodaj Wydatek</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/clipboard-data.svg"
-                alt="clipbord icon">Przeglądaj Bilans</a>
-            <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/tools.svg"
-                alt="tools icon">Ustawienia</a>
-            <a role="button" class="btn btn-outline-secondary logout px-3"><img src="../img/box-arrow-right.svg"
-                alt="logout icon">Wyloguj</a>
+
+        <div class="col-8 ">
+
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="d-grid gap-2 d-flex navigation ">
+              <li class="nav-item">
+                <a role="button" href="../Main/main.html" class="btn btn-outline-secondary home px-3 "><img
+                    src="../img/house-fill.svg" alt="house icon">Strona Główna</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../AddIncome/addIncome.html" class="btn btn-outline-secondary px-3"><img
+                    src="../img/coin.svg" alt="coin icon">Dodaj
+                  Przychód</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../AddExpense/addExpense.html" class="btn btn-outline-secondary px-3"><img
+                    src="../img/cart-plus.svg" alt="cart icon">Dodaj Wydatek</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../Bilans/bilans.html" class="btn btn-outline-secondary px-3"><img
+                    src="../img/clipboard-data.svg" alt="clipbord icon">Przeglądaj Bilans</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" class="btn btn-outline-secondary px-3"><img src="../img/tools.svg"
+                    alt="tools icon">Ustawienia</a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="../Home/home.html" class="btn btn-outline-secondary logout px-3"><img
+                    src="../img/box-arrow-right.svg" alt="logout icon">Wyloguj</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -50,67 +72,81 @@
 
     <article>
 
-      
+
       <div>
         <div id="site">
           <div class="container text-panel">
             <div class="row ">
               <div class="col registration text-center ">
-                <h1 class="h4 mt-2 fw-normal" >Wprowadź Dane Przychodu</h1>
+                <h1 class="h4 mt-2 fw-normal">Wprowadź Dane Przychodu</h1>
               </div>
             </div>
             <div class="row justify-content-center ">
               <div class="col-9 pt-4">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><img src="../img/coin.svg" alt="coin icon"></span>
-                  <input type="text" class="form-control input-place" placeholder="Kwota" aria-label="Kwota" aria-describedby="basic-addon1">
+                  <span class="input-group-text" id="amount"><img src="../img/coin.svg" alt="coin icon"></span>
+                  <input type="text" class="form-control input-place" placeholder="Kwota" aria-label="Kwota"
+                    aria-describedby="amount">
                 </div>
               </div>
             </div>
             <div class="row justify-content-center">
               <div class="col-9">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon2"><img src="../img/calendar-event.svg" alt="calendar icon"></span>
-                  <input type="date" id="date" class="form-control input-place" placeholder="2024-08-15" aria-label="Email" aria-describedby="basic-addon2">
+                  <span class="input-group-text" id="income-date"><img src="../img/calendar-event.svg"
+                      alt="calendar icon"></span>
+                  <input type="date" id="date" class="form-control input-place" 
+                    aria-label="date" aria-describedby="income-date">
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-9 ">
+                <div class="input-group mb-3 flex-nowrap">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="income-category"><img src="../img/book-half.svg"
+                        alt="book icon"></label>
+                  </div>
+                  <select class="custom-select " id="income-category">
+                    <option selected>Wybierz przychód</option>
+                    <option value="1">Wynagrodzenie</option>
+                    <option value="2">Odsetki bankowe</option>
+                    <option value="3">Sprzedaż na allegro</option>
+                    <option value="4">Inne</option>
+                  </select>
                 </div>
               </div>
             </div>
             <div class="row justify-content-center">
               <div class="col-9 ">
                 <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect"><img src="../img/book-half.svg" alt="book icon"></label>
-                  </div>
-                  <select class="custom-select " id="inputGroupSelect">
-                    <option selected>Wybierz przychód</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-              </div>
-            </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-9 ">
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon4"><img src="../img/pencil.svg" alt="pencil icon"></span>
-                  <input type="text" class="form-control input-place" placeholder="Komentarz" aria-label="Komentarz" aria-describedby="basic-addon4">
+                  <span class="input-group-text" id="coment"><img src="../img/pencil.svg" alt="pencil icon"></span>
+                  <input type="text" class="form-control input-place" placeholder="Komentarz (opcjonalnie)"
+                    aria-label="Komentarz" aria-describedby="coment">
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="col pb-3 text-center">
+              <div class="col-3"></div>
+              <div class="col-3 pb-3 text-center">
                 <button type="button" class="btn btn-primary"
-                  style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Dodaj </button>
-                  
+                  style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 2rem; --bs-btn-font-size: 1.2rem;">Dodaj
+                </button>
+
               </div>
+              <div class="col-3 pb-3 text-center">
+                <button type="button" class="btn btn-primary" id="cancelbtn"
+                  style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 2rem; --bs-btn-font-size: 1.2rem;">Anuluj
+                </button>
+                
+              </div>
+              <div class="col-3"></div>
             </div>
           </div>
         </div>
       </div>
 
     </article>
-
 
   </main>
 
