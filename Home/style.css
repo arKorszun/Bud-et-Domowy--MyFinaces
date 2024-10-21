@@ -61,6 +61,7 @@ body {
   .container {
     width: 670px;
   }
+  
 }
 
 @media (min-width: 992px) {
@@ -74,6 +75,7 @@ body {
     width: 700px;
   }
 }
+
 
 .button-descript {
   font-family: "Source Sans 3", sans-serif;
@@ -94,7 +96,7 @@ body {
   /*  change this with JavaScript to flex*/
   flex-direction: column;
   height: 100%;
-  width: 40%;
+  width: 60%;
   position: fixed;
   /* Stay in place */
   z-index: 1;
@@ -115,7 +117,11 @@ body {
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
-
+@media (max-width: 768px) {
+  .hideShow {
+    width: 100%;
+  }
+}
 .hideShow  p{
   font-size: 1.3rem;
 }
