@@ -70,6 +70,10 @@ body {
   height: 50px;
   border-bottom: 1px double rgb(0% 12.16% 24.71%);
 }
+#errorL{
+  font-family: "Source Sans 3", sans-serif;
+  
+}
 
 .input-place {
   font-size: 1.1rem;

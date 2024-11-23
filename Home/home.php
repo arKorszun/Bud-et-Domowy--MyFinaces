@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand " aria-label="Second navbar example">
       <div class="container-fluid main-navbar align-items-end ">
         <div class="navbar-brand col-8 px-5 align-bottom">
-          <a class="navbar-brand" id="logo" href="../Home/home.html"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
+          <a class="navbar-brand" id="logo" href="../Home/home.php"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
             MyFinances</a>
         </div>
         <div class="collapse navbar-collapse col-4 pb-3 " >
@@ -68,11 +68,11 @@
 
             <div class="row text-center ">
               <div class="col-6">
-                <a href="../Login/login.html" type="button" class="btn btn-success"
+                <a href="../Login/login.php" type="button" class="btn btn-success"
                   style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Logowanie</a>
               </div>
               <div class="col-6">
-                <a href="../Registration/registration.html" type="button" class="btn btn-primary"
+                <a href="../Registration/registration.php" type="button" class="btn btn-primary"
                   style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Rejestracja</a>
               </div>
             </div>

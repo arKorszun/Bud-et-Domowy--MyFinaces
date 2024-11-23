@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if( isset($_SESSION['loggedIn']) AND $_SESSION['loggedIn'] == true )
+{
+  header('Location: ../Main/main.php');
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,14 +36,15 @@
     <nav class="navbar navbar-expand " aria-label="Second navbar example">
       <div class="container-fluid main-navbar align-items-end ">
         <div class="navbar-brand col-8 px-5 align-bottom">
-          <a class="navbar-brand" id="logo" href="../Home/home.html"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
+          <a class="navbar-brand" id="logo" href="../Home/home.html"><img class="coin" src="../img/piggy-bank.svg"
+              alt="coin icon">
             MyFinances</a>
         </div>
-        <div class="collapse navbar-collapse col-4 pb-3 " >
+        <div class="collapse navbar-collapse col-4 pb-3 ">
           <ul class="navbar-nav m-auto">
             <li class="nav-item">
               <div class="col-6 pb-2">
-                <a href="../Registration/registration.html"  class="btn btn-outline-primary"
+                <a href="../Registration/registration.php" class="btn btn-outline-primary"
                   style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Rejestracja</a>
               </div>
             </li>
@@ -50,34 +61,48 @@
           <div class="container text-panel">
             <div class="row ">
               <div class="col registration text-center ">
-                <h1 class="h4 mt-2 fw-normal" >Logowanie</h1>
+                <h1 class="h4 mt-2 fw-normal">Logowanie</h1>
               </div>
             </div>
-            
-            <div class="row justify-content-center">
-              <div class="col-9 pt-4">
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><img src="../img/envelope-at.svg" alt="envelope icon"></span>
-                  <input type="text" class="form-control input-place" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+            <form action="log_In.php" method="POST">
+              <div class="row justify-content-center">
+                <div class="col-9 pt-4">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><img src="../img/envelope-at.svg"
+                        alt="envelope icon"></span>
+                    <input type="email" class="form-control input-place" placeholder="Email" aria-label="Email" name="email">
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-9 ">
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon2"><img src="../img/lock.svg" alt="lock icon"></span>
-                  <input type="text" class="form-control input-place" placeholder="Hasło" aria-label="Hasło" aria-describedby="basic-addon1">
+              <div class="row justify-content-center">
+                <div class="col-9 ">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2"><img src="../img/lock.svg" alt="lock icon"></span>
+                    <input type="password" class="form-control input-place" placeholder="Hasło" aria-label="Hasło" name="password">
+                  </div>
                 </div>
               </div>
-            </div>
-            
+
+              <div class="row">
+                <div class="col pb-3 text-center">
+                  <button type="submit"  class="btn btn-success" 
+                    style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Zaloguj</button>
+
+                </div>
+              </div>
+            </form>
             <div class="row">
-              <div class="col pb-3 text-center">
-                <a href="../Main/main.html" class="btn btn-success"
-                  style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Zaloguj</a>
-                
+                <div class="col pb-3 text-center">
+                  <?php
+                 if(isset($_SESSION['login_error'])) echo $_SESSION['login_error'];
+                 unset($_SESSION['login_error']);
+
+                 if(isset($_SESSION['registration_complete'])) echo '<p style="color:green">'.'Dziękujemy za rejestrację, teraz możesz sie zalogować!'.'</p>';
+                 unset($_SESSION['registration_complete']);
+                  ?>
+
+                </div> 
               </div>
-            </div>
           </div>
         </div>
       </div>

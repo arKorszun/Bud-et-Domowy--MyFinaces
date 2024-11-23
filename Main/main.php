@@ -1,3 +1,15 @@
+<?php
+session_start();
+// redirection to home.php when no user is logged In
+if(!isset($_SESSION['loggedIn']))
+{
+  header('Location:../Home/home.php');
+  exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +73,7 @@
                     alt="tools icon">Ustawienia</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../Home/home.html" class="btn btn-outline-secondary logout px-3"><img
+                <a role="button" href="../Login/logOut.php" class="btn btn-outline-secondary logout px-3"><img
                     src="../img/box-arrow-right.svg" alt="logout icon">Wyloguj</a>
               </li>
             </ul>
@@ -89,7 +101,9 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-9">
-                      <h2 class="hello">Witaj Imie!</h2>
+                      <h2 class="hello">
+                        <?php echo "Witaj ".$_SESSION['logged_usser_name']."!" ?>
+                      </h2>
                       <p>W celu nawigacji użyj menu znajdującego się powyżej
                       </p>
                     </div>
