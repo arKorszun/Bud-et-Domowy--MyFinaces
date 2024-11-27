@@ -4,7 +4,7 @@
 
   if (isset($_POST['email']))
   {
-    // Fully correct validation
+    // Fully correct validation flag
     $allRight = true;
 
     //Name validation
@@ -89,7 +89,7 @@
           $user_id = $get_new_user_id->fetch_assoc();
           $new_user_id = $user_id['id'];
           
-          //copy default category of incomes/expenses for users
+          //copy default category of incomes/expenses and payment methods for users
           $nameI_query = $db_connection->query("SELECT name FROM incomes_category_default");
           while ($category_name = $nameI_query->fetch_assoc())
             {
@@ -102,6 +102,13 @@
             {
                $name = $category_name['name'];
               $db_connection->query("INSERT INTO expenses_category_assigned_to_users VALUES(NULL, '$new_user_id','$name') ");
+            } 
+
+          $nameP_query = $db_connection->query("SELECT name FROM payment_methods_default");
+          while ($payment_name = $nameP_query->fetch_assoc())
+            {
+              $name = $payment_name['name'];
+              $db_connection->query("INSERT INTO payment_methods_assigned_to_users VALUES(NULL, '$new_user_id','$name') ");
             } 
   
         } else{

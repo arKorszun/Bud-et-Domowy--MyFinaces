@@ -1,3 +1,44 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedIn'])) {
+  header('Location:../Home/home.php');
+  exit();
+}
+//$logged_user_id = $_SESSION['logged_user_id'];
+$logged_user_id = 1;
+//Current month bilans
+if (isset($_POST['current_month']))
+{
+  $end_date = date("Y-m-d");
+  $start_date = date("Y-m-01");
+  
+  require_once "../Login/connect.php";
+  mysqli_report(MYSQLI_REPORT_STRICT);
+
+  try {
+    $db_connection = new mysqli($host, $db_user, $db_password, $db_name);
+    if ($db_connection->connect_errno != 0) {
+      throw new Exception(mysqli_connect_errno());
+    } else {
+      
+        if ($get_incomes_cat_sum = $db_connection->query("SELECT incomes_category_assigned_to_users.name, SUM(incomes.amount) AS category_sum FROM incomes_category_assigned_to_users INNER JOIN incomes ON incomes.income_category_assigned_to_user_id=incomes_category_assigned_to_users.id WHERE incomes.user_id = '$logged_user_id' AND incomes.date_of_income BETWEEN '$start_date' AND '$end_date' GROUP BY incomes_category_assigned_to_users.name ORDER BY category_sum DESC")) 
+        {
+          
+          
+        } else {
+          throw new Exception($db_connection->error);
+        }
+      
+    }
+  } catch (Exception $error) {
+    echo '<span style="color:red;">Błąd serwera! Spróbuj ponownie później!</span>';
+    echo '<br/>Informacja developerska: ' . $error;
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +67,7 @@
     <nav class="navbar navbar-expand-md " aria-label="navbar">
       <div class="container-fluid main-navbar align-items-start ">
         <div class="navbar-brand col-4 px-5 d-flex">
-          <a class="navbar-brand" id="logo" href="../Home/home.html"><img class="coin" src="../img/piggy-bank.svg"
+          <a class="navbar-brand" id="logo" href="../Home/home.php"><img class="coin" src="../img/piggy-bank.svg"
               alt="coin icon">
             MyFinances</a>
           <button class="navbar-toggler" id="menubtn" type="button" data-bs-toggle="collapse"
@@ -41,20 +82,20 @@
           <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="d-grid gap-2 d-flex navigation ">
               <li class="nav-item">
-                <a role="button" href="../Main/main.html" class="btn btn-outline-secondary home px-3 "><img
+                <a role="button" href="../Main/main.php" class="btn btn-outline-secondary home px-3 "><img
                     src="../img/house-fill.svg" alt="house icon">Strona Główna</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../AddIncome/addIncome.html" class="btn btn-outline-secondary px-3"><img
+                <a role="button" href="../AddIncome/addIncome.php" class="btn btn-outline-secondary px-3"><img
                     src="../img/coin.svg" alt="coin icon">Dodaj
                   Przychód</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../AddExpense/addExpense.html" class="btn btn-outline-secondary px-3"><img
+                <a role="button" href="../AddExpense/addExpense.php" class="btn btn-outline-secondary px-3"><img
                     src="../img/cart-plus.svg" alt="cart icon">Dodaj Wydatek</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../Bilans/bilans.html" class="btn btn-outline-secondary px-3"><img
+                <a role="button" href="../Bilans/bilans.php" class="btn btn-outline-secondary px-3"><img
                     src="../img/clipboard-data.svg" alt="clipbord icon">Przeglądaj Bilans</a>
               </li>
               <li class="nav-item">
@@ -62,7 +103,7 @@
                     alt="tools icon">Ustawienia</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../Home/home.html" class="btn btn-outline-secondary logout px-3"><img
+                <a role="button" href="../Home/home.php" class="btn btn-outline-secondary logout px-3"><img
                     src="../img/box-arrow-right.svg" alt="logout icon">Wyloguj</a>
               </li>
             </ul>
@@ -108,14 +149,16 @@
                 aria-expanded="false">
                 Wybierz Okres
               </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Bieżący miesiąc</a></li>
-                <li><a class="dropdown-item" href="#">Poprzedni miesiąc</a></li>
-                <li><a class="dropdown-item" href="#">Bieżący rok</a></li>
-                <li><a class="dropdown-item" id="modal-item" href="#" data-bs-toggle="modal"
-                    data-bs-target=".bd-modal-md">Niestandardowy</a>
-                </li>
-              </ul>
+              <form method="post">
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="submit" value="1" name="current_month">Bieżący miesiąc</button></li>
+                  <li><a class="dropdown-item" href="#">Poprzedni miesiąc</a></li>
+                  <li><a class="dropdown-item" href="#">Bieżący rok</a></li>
+                  <li><a class="dropdown-item" id="modal-item" href="#" data-bs-toggle="modal"
+                      data-bs-target=".bd-modal-md">Niestandardowy</a>
+                  </li>
+                </ul>
+              </form>
             </div>
           </div>
 
@@ -138,33 +181,28 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Wynagrodzenie</td>
-                            <td>5000</td>
+                          <?php
+                          if(isset($get_incomes_cat_sum))
+                          {
+                            $row_count = 1;
+                            $total_sum = 0;
+                            while($incomes_by_sum = $get_incomes_cat_sum->fetch_assoc())
+                            {
+                              echo '<tr>
+                              <th scope="row">'.$row_count.'</th>
+                              <td>'.$incomes_by_sum['name'].'</td>
+                              <td>'.$incomes_by_sum['category_sum'].'</td>
+                              </tr>';
+                              $row_count++;
+                              $total_sum+=$incomes_by_sum['category_sum'];
+                            }
+                          }                         
+                          unset($get_incomes_cat_sum);
+                          ?>
 
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Odsetki bankowe</td>
-                            <td>500</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Sprzedaż na allegro</td>
-                            <td>200</td>
-
-                          </tr>
-                          <tr>
-                            <th scope="row">4</th>
-                            <td>Inne</td>
-                            <td>1000</td>
-
-                          </tr>
                           <tr>
                             <th colspan="2">Suma</th>
-                            <td>6700</td>
+                            <td><?php if(isset($total_sum)) echo $total_sum; ?> PLN</td>
                           </tr>
                         </tbody>
                       </table>
@@ -384,7 +422,7 @@
                   new Chart(ctx, {
                     type: 'pie',
                     data: {
-                      labels: ['Ubrania', 'Jedzenie', 'Emerytura', 'Inne',],
+                      labels: ['Ubrania', 'Jedzenie', 'Emerytura', 'Inne', ],
                       datasets: [{
                         label: 'Kategoria wydatku',
                         data: [200, 500, 300, 1000],

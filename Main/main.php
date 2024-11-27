@@ -52,20 +52,20 @@ if(!isset($_SESSION['loggedIn']))
           <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="d-grid gap-2 d-flex navigation ">
               <li class="nav-item">
-                <a role="button" href="../Main/main.html" class="btn btn-outline-secondary home px-3 "><img
+                <a role="button" href="../Main/main.php" class="btn btn-outline-secondary home px-3 "><img
                     src="../img/house-fill.svg" alt="house icon">Strona Główna</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../AddIncome/addIncome.html" class="btn btn-outline-secondary px-3"><img
+                <a role="button" href="../AddIncome/addIncome.php" class="btn btn-outline-secondary px-3"><img
                     src="../img/coin.svg" alt="coin icon">Dodaj
                   Przychód</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../AddExpense/addExpense.html" class="btn btn-outline-secondary px-3"><img
+                <a role="button" href="../AddExpense/addExpense.php" class="btn btn-outline-secondary px-3"><img
                     src="../img/cart-plus.svg" alt="cart icon">Dodaj Wydatek</a>
               </li>
               <li class="nav-item">
-                <a role="button" href="../Bilans/bilans.html" class="btn btn-outline-secondary px-3"><img
+                <a role="button" href="../Bilans/bilans.php" class="btn btn-outline-secondary px-3"><img
                     src="../img/clipboard-data.svg" alt="clipbord icon">Przeglądaj Bilans</a>
               </li>
               <li class="nav-item">
@@ -88,8 +88,16 @@ if(!isset($_SESSION['loggedIn']))
         <div class=" container menu  ">
           <div class=" row justify-content-center ">
             <div class="col ">
-              <div class="loging-confirmation text-center">
-                <p class="log">Logowanie zakończone sukcesem! </p>
+              <div class="loging-confirmation text-center ">
+                <?php 
+                if(isset($_SESSION['freshly_logged'])){
+                echo '<p class="log">Logowanie zakończone sukcesem!</p>';
+               }
+               else{
+                echo '<p class="log"></p>';
+               }
+                unset($_SESSION['freshly_logged']);
+                ?>
 
               </div>
             </div>
@@ -102,7 +110,7 @@ if(!isset($_SESSION['loggedIn']))
                   <div class="row">
                     <div class="col-9">
                       <h2 class="hello">
-                        <?php echo "Witaj ".$_SESSION['logged_usser_name']."!" ?>
+                        <?php echo "Witaj ".$_SESSION['logged_user_name']."!" ?>
                       </h2>
                       <p>W celu nawigacji użyj menu znajdującego się powyżej
                       </p>

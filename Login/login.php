@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-if( isset($_SESSION['loggedIn']) AND $_SESSION['loggedIn'] == true )
-{
+if (isset($_SESSION['loggedIn']) and $_SESSION['loggedIn'] == true) {
   header('Location: ../Main/main.php');
   exit();
 }
@@ -26,13 +25,11 @@ if( isset($_SESSION['loggedIn']) AND $_SESSION['loggedIn'] == true )
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
     rel="stylesheet">
-
   <title>LoginPage</title>
 </head>
 
 <body>
   <main>
-
     <nav class="navbar navbar-expand " aria-label="Second navbar example">
       <div class="container-fluid main-navbar align-items-end ">
         <div class="navbar-brand col-8 px-5 align-bottom">
@@ -55,7 +52,6 @@ if( isset($_SESSION['loggedIn']) AND $_SESSION['loggedIn'] == true )
     </nav>
 
     <article>
-
       <div>
         <div id="site">
           <div class="container text-panel">
@@ -82,36 +78,29 @@ if( isset($_SESSION['loggedIn']) AND $_SESSION['loggedIn'] == true )
                   </div>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col pb-3 text-center">
-                  <button type="submit"  class="btn btn-success" 
+                  <button type="submit" class="btn btn-success"
                     style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1.2rem;">Zaloguj</button>
-
                 </div>
               </div>
             </form>
             <div class="row">
-                <div class="col pb-3 text-center">
-                  <?php
-                 if(isset($_SESSION['login_error'])) echo $_SESSION['login_error'];
-                 unset($_SESSION['login_error']);
+              <div class="col pb-3 text-center">
+                <?php
+                if (isset($_SESSION['login_error'])) echo $_SESSION['login_error'];
+                unset($_SESSION['login_error']);
 
-                 if(isset($_SESSION['registration_complete'])) echo '<p style="color:green">'.'Dziękujemy za rejestrację, teraz możesz sie zalogować!'.'</p>';
-                 unset($_SESSION['registration_complete']);
-                  ?>
-
-                </div> 
+                if (isset($_SESSION['registration_complete'])) echo '<p style="color:green">' . 'Dziękujemy za rejestrację, teraz możesz sie zalogować!' . '</p>';
+                unset($_SESSION['registration_complete']);
+                ?>
               </div>
+            </div>
           </div>
         </div>
       </div>
-
     </article>
-
-
   </main>
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
