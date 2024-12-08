@@ -161,7 +161,7 @@
     <nav class="navbar navbar-expand " aria-label="Second navbar example">
       <div class="container-fluid main-navbar align-items-end ">
         <div class="navbar-brand col-8 px-5 align-bottom">
-          <a class="navbar-brand" id="logo" href="../Home/home.html"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
+          <a class="navbar-brand" id="logo" href="../Home/home.php"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
             MyFinances</a>
         </div>
 

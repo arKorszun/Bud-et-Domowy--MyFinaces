@@ -129,7 +129,7 @@ if ((isset($_POST['expense_amount'])) && (isset($_POST['expense_date'])) && (iss
     <nav class="navbar navbar-expand-md " aria-label="navbar">
       <div class="container-fluid main-navbar align-items-start ">
         <div class="navbar-brand col-4 px-5 d-flex">
-          <a class="navbar-brand" id="logo" href="./addExpense.php"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
+          <a class="navbar-brand" id="logo" href="../Main/main.php"><img class="coin" src="../img/piggy-bank.svg" alt="coin icon">
             MyFinances</a>
           <button class="navbar-toggler" id="menubtn" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
